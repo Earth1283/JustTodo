@@ -85,4 +85,4 @@ async def stream_logs(
         return
 
     async for line in process.stdout:
-        yield line.decode("utf-8").strip()
+        yield line.decode("utf-8", errors="replace").strip()
